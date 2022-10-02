@@ -29,8 +29,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-//        txtLat = findViewById<TextView>(R.id.latTextView)
-//        txtLng = findViewById<TextView>(R.id.lngTextView)
+        txtLat = findViewById<TextView>(R.id.latTextView)
+        txtLng = findViewById<TextView>(R.id.lngTextView)
     }
 
     private fun setUpLocationListener() {
@@ -53,6 +53,7 @@ class MainActivity : AppCompatActivity() {
             //                                          int[] grantResults)
             // to handle the case where the user grants the permission. See the documentation
             // for ActivityCompat#requestPermissions for more details.
+
             return
         }
         fusedLocationProviderClient.requestLocationUpdates(
@@ -70,6 +71,7 @@ class MainActivity : AppCompatActivity() {
             },
             Looper.myLooper()
         )
+
     }
 
     override fun onStart() {
